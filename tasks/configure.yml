@@ -29,12 +29,14 @@
   template:
     src: "{{ tomcat_template_manager_context }}"
     dest: "{{ tomcat_install_path }}/apache-tomcat-{{ tomcat_version }}/webapps/manager/META-INF/context.xml"
+  when: not tomcat_skip_manager_apps
   notify: restart tomcat
 
 - name: Configure access to Host Manager (from localhost only or from anywhere)
   template:
     src: "{{ tomcat_template_host_manager_context }}"
     dest: "{{ tomcat_install_path }}/apache-tomcat-{{ tomcat_version }}/webapps/host-manager/META-INF/context.xml"
+  when: not tomcat_skip_manager_apps
   notify: restart tomcat
 
 - name: Set production permissions

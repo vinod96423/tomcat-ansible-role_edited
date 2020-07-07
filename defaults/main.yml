@@ -55,6 +55,10 @@ tomcat_template_users: "tomcat-users-{{ '.'.join(tomcat_version.split('.')[:2]) 
 
 tomcat_temp_download_path: /tmp/ansibletomcattempdir
 
+tomcat_unarchive_extra_opts: ""
+
+tomcat_skip_manager_apps: false
+
 # Uninstall default parameters
 tomcat_uninstall_create_backup: True
 

@@ -112,6 +112,19 @@ Optional variables (by default undefined):
   * `tomcat_user_uid`: 500
   * `tomcat_group_gid`: 500
 
+Skipping install of bundled webapps:
+- In the tomcat packages are bundled some webapps like *manager*, *host_manager* and *docs*. If you want to skip the installation you need to set
+  
+  * `tomcat_skip_manager_apps`: true (Default: False)
+  * ```  
+    tomcat_unarchive_extra_opts: 
+      - --exclude=apache-tomcat-{{ tomcat_version }}/ webapps/ docs
+      - --exclude=apache-tomcat-{{ tomcat_version }}/ webapps/ examples 
+      - --exclude=apache-tomcat-{{ tomcat_version }}/ webapps/ host-manager
+      - --exclude=apache-tomcat-{{ tomcat_version }}/ webapps/ manager
+    ```
+  
+
 In case of uninstallation:
 - `tomcat_state`: absent
   * To uninstall tomcat that was installed using this role, set this variable to "absent". Default value is "present".

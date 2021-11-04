@@ -3,6 +3,10 @@
 Description=Apache Tomcat Web Application Container
 After=syslog.target network.target
 
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
+
 [Service]
 Type=forking
 
@@ -14,6 +18,9 @@ ExecStop={{ tomcat_install_path }}/{{ tomcat_service_name }}/bin/shutdown.sh
 
 User={{ tomcat_user }}
 Group={{ tomcat_group }}
+
+Restart=on-failure
+RestartSec=5s
 
 [Install]
 WantedBy=multi-user.target

@@ -1,7 +1,0 @@
----
-java_version: java-1.8.0-openjdk
-tomcat_version: 9.0.60
-tomcat_download_path: /usr/local/
-tomcat_install_path: /usr/local/
-tomcat_template_server: server.xml.j2
-tomcat_template_users: tomcat-users.xml.j2

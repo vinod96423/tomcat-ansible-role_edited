@@ -1,9 +1,9 @@
 ---
 
 galaxy_info:
-  author: zaxos
-  description: Ansible role to install and configure Apache Tomcat on CentOS/RHEL
-  company: zaxos
+  author: vinod
+  description: Ansible role to install and configure Apache Tomcat on amazon linux
+  company: vinod
   license: GPLv2
   min_ansible_version: 2.3
   platforms:
